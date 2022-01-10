@@ -1,0 +1,165 @@
+@font-face {
+  font-family: 'VarelaRound';
+  src: url('./assets/fonts/VarelaRound-Regular.ttf');
+}
+
+body {
+  font-family: 'VarelaRound', sans-serif;
+  padding: 20px 0px 50px 0px;
+  background-color: #F2F1F7;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.4em;
+}
+
+h2, h3 {
+  text-align: center;
+}
+
+.projects {
+  width: 80%;
+  margin: auto;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+  border: 2px solid #FE786D;
+  border-radius: 10px;
+  background-color: white;
+  margin: 20px 0px;
+}
+
+.card__img {
+  width: 200px;
+}
+
+.card__text {
+  text-align: center;
+}
+
+.new-project {
+  margin: 100px auto 0px auto;
+  width: 50%;
+  background-color: #FAD6D4;
+  border-radius: 10px;
+  padding: 20px 50px 50px 50px;
+}
+
+.new-project-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.new-project-form__input-group {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1em;
+  margin: 20px 0px;
+}
+
+.new-project-form__input-group input {
+  width: 60%;
+  border-radius: 8px;
+  border: none;
+  height: 2em;
+  font-family: inherit;
+}
+
+.new-project-form__input-group input:focus {
+  outline: solid #FBA5A3;
+}
+
+.new-project-form__input-group--textarea {
+  flex-direction: column;
+  align-items: center;
+}
+
+.new-project-form__input-group--textarea textarea {
+  border-radius: 8px;
+  margin-top: 20px;
+  font-family: inherit;
+  border: none;
+  width: 80%;
+}
+
+.new-project-form__input-group--textarea textarea:focus {
+  outline: solid #FBA5A3;
+}
+
+.new-project__button {
+  width: 50%;
+  margin: 20px auto;
+  background-color: #FBA5A3;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2em;
+  font-family: inherit;
+  min-height: fit-content;
+  padding: 10px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1100px) {  
+  .card {
+    width: 45%;
+  }
+
+  .new-project-form__input-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .new-project-form__input-group input {
+    width: 80%;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .cards {
+    justify-content: center;
+  }
+
+  .card {
+    width: 80%;
+  }
+
+  .new-project {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .card__img {
+    width: 150px;
+  }
+  
+  .new-project-form__input-group {
+    text-align: center;
+  }
+
+  .new-project-form__input-group input, .new-project-form__input-group textarea {
+    width: 100%;
+  }
+
+  .new-project__button {
+    width: 100%;
+  }
+}
