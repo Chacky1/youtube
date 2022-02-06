@@ -1,0 +1,37 @@
+[
+  {
+    "firstName" : "Bart",
+    "lastName" : "Simpson",
+    "hobbies" : ["skateboard", "painting on school walls"]
+  },
+  {
+    "firstName" : "Lisa",
+    "lastName" : "Simpson",
+    "hobbies" : ["read books", "saxophone"]
+  },
+  {
+    "firstName" : "Homer",
+    "lastName" : "Simpson",
+    "hobbies" : ["eat donuts", "watch the TV", "drink beers"]
+  },
+  {
+    "firstName" : "Marge",
+    "lastName" : "Simpson",
+    "hobbies" : ["care about the family"]
+  },
+  {
+    "firstName" : "Charles",
+    "lastName" : "Montgomery Burns",
+    "hobbies" : ["manage the nuclear power plant"]
+  },
+  {
+    "firstName" : "Krusty",
+    "lastName" : "The Clown",
+    "hobbies" : ["make children laugh"]
+  },
+  {
+    "firstName" : "Edna",
+    "lastName" : "Krabappel",
+    "hobbies" : ["teach at school"]
+  }
+]
