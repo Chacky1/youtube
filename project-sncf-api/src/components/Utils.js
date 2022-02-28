@@ -8,14 +8,11 @@ const pad = (number) => {
 
 export const getUTCDate = () => {
   const date = new Date()
-  const formattedDate =
-        date.getUTCFullYear() +
-        pad(date.getUTCMonth() + 1) +
-        pad(date.getUTCDate()) +
-        'T' +
-        pad(date.getUTCHours()) +
-        pad(date.getUTCMinutes()) +
-        pad(date.getUTCSeconds())
+  const formattedDate = `${
+    date.getUTCFullYear() + pad(date.getUTCMonth() + 1) + pad(date.getUTCDate())
+  }T${pad(date.getUTCHours())}${pad(date.getUTCMinutes())}${pad(
+    date.getUTCSeconds()
+  )}`
   return formattedDate
 }
 
@@ -30,7 +27,7 @@ export const parseUTCDate = (apiDate) => {
 
 export const getFullMinutes = (date) => {
   if (date.getMinutes() < 10) {
-    return '0' + date.getMinutes()
+    return `0${date.getMinutes()}`
   }
   return date.getMinutes()
 }

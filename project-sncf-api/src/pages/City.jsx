@@ -4,14 +4,15 @@ import citiesStations from '../gares.json'
 
 import TrainStations from '../components/TrainStations'
 
-const City = () => {
+function City() {
   const { city } = useParams()
 
   return (
-		<div className="city">
-			<h2> {city} </h2> <TrainStations stations={citiesStations[city]} />{' '}
-			<Outlet />
-		</div>
+    <div className="city">
+      <h2 className="city__name">{city}</h2>
+      <TrainStations stations={citiesStations[city]} />
+      <Outlet />
+    </div>
   )
 }
 

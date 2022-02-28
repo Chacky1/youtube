@@ -1,7 +1,7 @@
 import React from 'react'
 import CityCard from './CityCard'
 
-const CityCards = () => {
+function CityCards() {
   const cities = [
     'bordeaux',
     'brest',
@@ -11,15 +11,15 @@ const CityCards = () => {
     'nantes',
     'paris',
     'strasbourg',
-    'toulouse'
+    'toulouse',
   ]
 
   return (
-		<div className="city-cards">
-			{cities.map((city) => {
-			  return <CityCard key={city} city={city} />
-			})}
-		</div>
+    <div className="city-cards">
+      {cities.map((city) => (
+        <CityCard key={city} city={city} />
+      ))}
+    </div>
   )
 }
 
