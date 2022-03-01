@@ -6,6 +6,14 @@
     color: white;
     font-size: 1.5rem;
 
+    @media screen and (max-width: 850px) {
+        grid-template-columns: 1fr 2fr 2fr 4fr 1fr;
+        font-size: 1.2rem;
+    }
+
+    @media screen and (max-width: 750px) {
+        font-size: 1rem;
+    }
 
     &--light {
         background-color: #0365F4ab;
@@ -24,6 +32,10 @@
         grid-row-start: 1;
         grid-row-end: span 1;
         font-size: 0.8rem;
+
+        @media screen and (max-width: 750px) {
+            font-size: 0.6rem;
+        }
     }
 
     &__train-number {
@@ -32,6 +44,10 @@
         grid-row-start: 2;
         grid-row-end: span 1;
         font-size: 0.8rem;
+
+        @media screen and (max-width: 750px) {
+            font-size: 0.6rem;
+        }
     }
 
     &__time {
@@ -41,14 +57,26 @@
         grid-row-end: span 2;
         color: #E1E929;
         font-weight: 700;
+
+        &--disappear {
+            display: none;
+        }
     }
 
     &__delay {
-        display: none;
         grid-column-start: 3;
         grid-column-end: span 1;
         grid-row-start: 1;
         grid-row-end: span 2;
+        font-size: 1.2rem;
+
+        @media screen and (max-width: 750px) {
+            font-size: 1rem;
+        }
+
+        &--disappear {
+            display: none;
+        }
     }
 
     &__destination {
@@ -70,6 +98,10 @@
         li {
             margin-right: 0.5rem;
             font-size: 1.2rem;
+
+            @media screen and (max-width: 750px) {
+                font-size: 1rem;
+            }
 
             img {
                 width: 10px;

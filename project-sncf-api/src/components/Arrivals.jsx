@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
-import { parseUTCDate, getFullMinutes } from './Utils'
+import { parseUTCDate, getFullMinutes, calculateDelay } from './Utils'
 import Origin from './Origin'
 
 function Arrivals() {
@@ -35,6 +35,18 @@ function Arrivals() {
         }))
         setNextArrivals(arrivals)
       })
+  }, [codeStation])
+
+  const [isTimeDisplayed, setIsTimeDisplayed] = useState(true)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsTimeDisplayed((prevIsTimeDisplayed) => !prevIsTimeDisplayed)
+    }, 5000)
+
+    return () => {
+      clearInterval(interval)
+    }
   }, [])
 
   return (
@@ -47,11 +59,21 @@ function Arrivals() {
           <p className="arrival__operator">{arrival.operator}</p>
           <p className="arrival__train-type">{arrival.transportationMode}</p>
           <p className="arrival__train-number">{arrival.trainNumber}</p>
-          <p className="arrival__time">
+          <p
+            className={`arrival__time ${
+              isTimeDisplayed ? '' : 'arrival__time--disappear'
+            }`}
+          >
             {arrival.baseArrivalTime.getHours()}h
             {getFullMinutes(arrival.baseArrivalTime)}
           </p>
-          <p className="arrival__delay" />
+          <p
+            className={`arrival__delay ${
+              isTimeDisplayed ? 'arrival__delay--disappear' : ''
+            }`}
+          >
+            {calculateDelay(arrival.baseArrivalTime, arrival.realArrivalTime)}
+          </p>
           <Origin idArrival={arrival.id} />
         </div>
       ))}

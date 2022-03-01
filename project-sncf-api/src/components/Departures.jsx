@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
-import { parseUTCDate, getFullMinutes } from './Utils'
+import { parseUTCDate, getFullMinutes, calculateDelay } from './Utils'
 import Stops from './Stops'
 
 function Departures() {
@@ -35,6 +35,18 @@ function Departures() {
     }))
 
     setNextDepartures(nextDeparturesAPI)
+  }, [codeStation])
+
+  const [isTimeDisplayed, setIsTimeDisplayed] = useState(true)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsTimeDisplayed((prevIsTimeDisplayed) => !prevIsTimeDisplayed)
+    }, 5000)
+
+    return () => {
+      clearInterval(interval)
+    }
   }, [])
 
   return (
@@ -49,11 +61,24 @@ function Departures() {
             {departure.transportationMode}
           </p>
           <p className="departure__train-number">{departure.trainNumber}</p>
-          <p className="departure__time">
+          <p
+            className={`departure__time ${
+              isTimeDisplayed ? '' : 'departure__time--disappear'
+            }`}
+          >
             {departure.baseDepartureTime.getHours()}h
             {getFullMinutes(departure.baseDepartureTime)}
           </p>
-          <p className="departure__delay" />
+          <p
+            className={`departure__delay ${
+              isTimeDisplayed ? 'departure__delay--disappear' : ''
+            }`}
+          >
+            {calculateDelay(
+              departure.baseDepartureTime,
+              departure.realDepartureTime
+            )}
+          </p>
           <p className="departure__destination">{departure.destination}</p>
           <Stops idDeparture={departure.id} />
         </div>

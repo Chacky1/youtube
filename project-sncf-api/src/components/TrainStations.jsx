@@ -15,7 +15,7 @@ function TrainStations({ stations }) {
           key={stationName}
           to={`${stations[stationName]}`}
         >
-          {stationName}
+          <span>{stationName}</span>
         </NavLink>
       ))}
     </div>

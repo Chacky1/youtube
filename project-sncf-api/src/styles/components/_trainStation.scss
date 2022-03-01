@@ -1,6 +1,10 @@
 .train-station {
     width: 80%;
     margin: auto;
+
+    @media screen and (max-width: 650px) {
+        width: 100%;
+    }
 }
 
 .directions {
@@ -18,7 +22,7 @@
 
     &__departures {
         background-color: #123a9f57;
-        color: #00000057;
+        color: white;
 
         &:hover {
             cursor: pointer;
@@ -26,20 +30,18 @@
 
         &--active {
             background-color: #123a9fab;
-            color: black;
         }
     }
 
     &__arrivals {
         background-color: #28893957;
-        color: #00000057;
+        color: white;
 
         &:hover {
             cursor: pointer;
         }
 
         &--active {
-            color: black;
             background-color: #288939ab;
         }
     }
